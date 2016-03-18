@@ -1,0 +1,7 @@
+<h2><%= @neighborhood.name %></h2>
+<p>Metro Stop: <%= @neighborhood.metro_stop %></p>
+
+<h2>Bars:</h2>
+<% @bars.each do |bar| %>
+  <h2><%= link_to bar.name, neighborhood_bar_url(bar) %></h2>
+<% end %>
