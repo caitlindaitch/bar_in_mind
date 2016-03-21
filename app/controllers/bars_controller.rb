@@ -16,7 +16,8 @@ class BarsController < ApplicationController
   end
 
   def show
-    @bar = Bar.find(params[:id])
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.find(params[:id])
   end
 
   def edit
@@ -29,7 +30,7 @@ class BarsController < ApplicationController
 
   def destroy
     @neighborhood = Neighborhood.find(params[:neighborhood_id])
-    @bar = Bar.find(params[:id])
+    @bar = @neighborhood.bars.find(params[:id])
     @bar.destroy
 
     redirect_to @neighborhood

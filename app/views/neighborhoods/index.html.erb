@@ -1,6 +1,14 @@
-Don't see the neighborhood you're looking for? <%= link_to "Add one", new_neighborhood_url %>.
+<div class="header">
+  <h1>Bar In Mind</h1>
+  <h2>Find out about the best bars in each D.C. neighborhood</h2>
+</div>
+
+<div class="add-neighborhood">Don't see the neighborhood you're looking for? <%= link_to "Add one", new_neighborhood_url %>.</div>
 
 <% @neighborhoods.each do |neighborhood| %>
-  <h2><%= link_to neighborhood.name, neighborhood %></h2>
-  <%= image_tag neighborhood.image_url %>
+  <div class="neighborhoods-outer col-md-3">
+    <div class="neighborhoods-inner mdl-shadow--2dp">
+      <%= link_to image_tag(neighborhood.image_url, :alt => neighborhood.name), neighborhood_url(neighborhood) %>
+    </div>
+  </div>
 <% end %>

@@ -1,5 +1,8 @@
-<h2><%= @bar.name %></h2>
+<div class="show-bar-header">
+  <h1><%= @bar.name %></h1>
+</div>
+
 <%= image_tag @bar.image_url %>
-<%= link_to 'Delete Post', neighborhood_bar_path(@neighborhood, @bar),
-                  :method => :delete %></div>
+<%= button_to 'Delete Post', neighborhood_bar_url(@neighborhood, @bar),
+                  method: :delete %></div>
 <p><strong>Note:</strong> With great power comes great responsibility. Please do not delete unless you have a good reason to to do.</p>
