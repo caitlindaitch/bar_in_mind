@@ -1,0 +1,19 @@
+<h1>New Bar</h2>
+
+<%= form_for [@neighborhood, @bar] do |f| %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :category %></p>
+  <p><%= f.text_field :category %></p>
+  <p><%= f.label :music %></p>
+  <p><%= f.text_field :music %></p>
+  <p><%= f.label :price_meter %></p>
+  <p><%= f.text_field :price_meter %></p>
+  <p><%= f.label :image_url %></p>
+  <p><%= f.text_field :image_url %></p>
+  <p><%= f.label :neighborhood_id %></p>
+  <p><%= f.hidden_field(:neighborhood_id, value: @neighborhood.id) %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+<%= link_to "Back to Home", neighborhoods_url %>

@@ -1,0 +1,5 @@
+<h2><%= @bar.name %></h2>
+<%= image_tag @bar.image_url %>
+<%= link_to "Delete it.", [@neighborhood, @bar], :confirm => "Are you sure?", :method => :delete %>
+
+<p><strong>Note:</strong> With great power comes great responsibility. Please do not delete unless you have a good reason to to do.</p>

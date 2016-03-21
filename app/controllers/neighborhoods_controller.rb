@@ -9,11 +9,13 @@ class NeighborhoodsController < ApplicationController
 
   def create
     @neighborhood = Neighborhood.create!(neighborhood_params)
+
+    redirect_to neighborhood_url(@neighborhood)
   end
 
   def show
     @neighborhood = Neighborhood.find(params[:id])
-    @bars = @neighborhood.bars.all
+    @bars = @neighborhood.bars
   end
 
   def edit
@@ -31,6 +33,6 @@ class NeighborhoodsController < ApplicationController
   private
 
   def neighborhood_params
-    params.require(:neighborhood).permit(:name, :metro_stop)
+    params.require(:neighborhood).permit(:name, :metro_stop, :image_url)
   end
 end

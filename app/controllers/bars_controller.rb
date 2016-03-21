@@ -4,11 +4,15 @@ class BarsController < ApplicationController
   end
 
   def new
-    @bar = Bar.new
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.new
   end
 
   def create
-    @bar = Bar.create(bar_params)
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.create(bar_params)
+
+    redirect_to neighborhood_bar_url(@neighborhood, @bar)
   end
 
   def show
@@ -24,12 +28,16 @@ class BarsController < ApplicationController
   end
 
   def destroy
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.find(params[:id])
+    @bar.destroy
 
+    redirect_to @neighborhood
   end
 
   private
 
-  def neighborhood_params
-    params.require(:bar).permit(:name, :category, :music, :price_meter, :neighborhood_id)
+  def bar_params
+    params.require(:bar).permit(:name, :category, :music, :price_meter, :neighborhood_id, :image_url)
   end
 end

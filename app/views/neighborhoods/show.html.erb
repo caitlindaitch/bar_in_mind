@@ -3,5 +3,8 @@
 
 <h2>Bars:</h2>
 <% @bars.each do |bar| %>
-  <h2><%= link_to bar.name, neighborhood_bar_url(bar) %></h2>
+  <h2><%= link_to bar.name, neighborhood_bar_path(@neighborhood, bar) %></h2>
+  <%= image_tag bar.image_url %>
 <% end %>
+
+<p>Don't see the bar you're looking for? <%= link_to "Add bar", new_neighborhood_bar_url(@neighborhood) %>.</p>
