@@ -153,6 +153,20 @@ h3 {
     width: 100%;
     opacity: 0;
     transition: 1s;
+    z-index: 10;
+
+    a:active, a:visited, a:link {
+      color: $header-color;
+      font-family: $body-font;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $header-color;
+      font-family: $body-font;
+      font-size: 20px;
+    }
   }
 
   div.overlay-text div {
