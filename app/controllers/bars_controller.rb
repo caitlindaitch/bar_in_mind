@@ -21,11 +21,16 @@ class BarsController < ApplicationController
   end
 
   def edit
-
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.find(params[:id])
   end
 
   def update
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.find(params[:id])
+    @bar.update(bar_params)
 
+    redirect_to neighborhood_bar_url(@neighborhood, @bar)
   end
 
   def destroy

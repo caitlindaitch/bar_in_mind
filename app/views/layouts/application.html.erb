@@ -9,11 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <div class="right-nav"><%= link_to "Home", neighborhoods_url %></div>
-  </nav>
+  <div class="container">
+    <nav>
+      <div class="right-nav"><%= link_to "Home", neighborhoods_url %></div>
+    </nav>
 
-  <%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>

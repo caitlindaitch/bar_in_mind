@@ -1,13 +1,17 @@
-<h1>New Neighborhood</h2>
+<div class="show-bar-header">
+  <h1>New Neighborhood</h1>
+</div>
 
-<%= form_for @neighborhood do |f| %>
-  <p><%= f.label :name %></p>
-  <p><%= f.text_field :name %></p>
-  <p><%= f.label :metro_stop %></p>
-  <p><%= f.text_field :metro_stop %></p>
-  <p><%= f.label :image_url %></p>
-  <p><%= f.text_field :image_url %></p>
-  <p><%= f.submit %></p>
-<% end %>
-
-<%= link_to "Back to Home", neighborhoods_url %>
+<div class="bar-show-page">
+  <div class="form">
+    <%= form_for @neighborhood do |f| %>
+      <p><%= f.label :name %></p>
+      <p><%= f.text_field :name %></p>
+      <p><%= f.label :metro_stop %></p>
+      <p><%= f.text_field :metro_stop %></p>
+      <p><%= f.label :image_url %></p>
+      <p><%= f.text_field :image_url %></p>
+      <p><%= f.submit "Submit", :class => "bars-button" %></p>
+    <% end %>
+  </div>
+</div>

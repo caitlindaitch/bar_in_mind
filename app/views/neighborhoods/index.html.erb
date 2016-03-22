@@ -4,10 +4,11 @@
 </div>
 
 <div class="add-neighborhood">Don't see the neighborhood you're looking for? <%= link_to "Add one", new_neighborhood_url %>.</div>
+
 <div class="bars-background">
   <% @neighborhoods.each do |neighborhood| %>
     <div class="neighborhoods-outer col-md-3">
-      <div class="neighborhoods-inner mdl-shadow--2dp">
+      <div class="neighborhoods-inner">
         <div class="overlay">
           <%= link_to image_tag(neighborhood.image_url, :alt => neighborhood.name), neighborhood_url(neighborhood) %>
           <div class="overlay-text">

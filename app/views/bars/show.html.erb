@@ -2,12 +2,17 @@
   <h1><%= @bar.name %></h1>
 </div>
 
-<%= image_tag @bar.image_url %>
-<p>Neighborhood: <%= @neighborhood.name %></p>
-<p>Category: <%= @bar.category %></p>
-<p>Music: <%= @bar.music %></p>
-<p>Price: <%= @bar.price_meter %></p>
-<p>Description: <%= @bar.description %></p>
-<%= button_to 'Delete Post', neighborhood_bar_url(@neighborhood, @bar),
-                  method: :delete %></div>
-<p><strong>Note:</strong> With great power comes great responsibility. Please do not delete unless you have a good reason to to do.</p>
+<div class="bar-show-page">
+  <%= image_tag @bar.image_url, class: "bar-show-image" %>
+  <p><strong>Neighborhood:</strong> <%= @neighborhood.name %></p>
+  <p><strong>Category:</strong> <%= @bar.category %></p>
+  <p><strong>Music:</strong> <%= @bar.music %></p>
+  <p><strong>Price:</strong> <%= @bar.price_meter %></p>
+  <p><strong>Description:</strong> <%= @bar.description %></p>
+  <div class="bars-show-footer">
+    <%= link_to 'Edit Bar', edit_neighborhood_bar_url(@neighborhood, @bar), class: "bars-button" %>
+    <%= button_to 'Delete Bar', neighborhood_bar_url(@neighborhood, @bar),
+                      method: :delete, class: "bars-button" %>
+    <p><strong>Note:</strong> With great power comes great responsibility. Please do not delete unless you have a good reason to to do.</p>
+  </div>
+</div>

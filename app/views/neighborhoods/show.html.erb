@@ -2,13 +2,24 @@
   <h1><%= @neighborhood.name %></h1>
 </div>
 
-<div class="add-neighborhood">Don't see the neighborhood you're looking for? <%= link_to "Add one", new_neighborhood_bar_url(@neighborhood) %>.</div>
+<div class="add-neighborhood">Don't see the bar you're looking for? <%= link_to "Add one", new_neighborhood_bar_url(@neighborhood) %>.</div>
 
 <h3>Bars:</h3>
-<% @bars.each do |bar| %>
-  <div class="neighborhoods-outer col-md-3">
-    <div class="neighborhoods-inner mdl-shadow--2dp">
-      <%= link_to image_tag(bar.image_url, :alt => bar.name), neighborhood_bar_url(@neighborhood, bar) %>
+
+<div class="bars-background">
+  <% @bars.each do |bar| %>
+
+    <div class="neighborhoods-outer col-md-3">
+      <div class="neighborhoods-inner">
+        <div class="overlay">
+          <%= link_to image_tag(bar.image_url, :alt => bar.name), neighborhood_bar_url(@neighborhood, bar) %>
+          <div class="overlay-text">
+            <div>
+              <%= link_to bar.name, neighborhood_bar_url(@neighborhood, bar) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
