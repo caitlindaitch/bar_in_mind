@@ -127,6 +127,7 @@ h3 {
   .overlay img {
     width:100%;
     vertical-align:top;
+    position: relative;
   }
 
   .overlay:after {
@@ -136,13 +137,32 @@ h3 {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.6);
     opacity: 0;
-    transition: all 1s;
   }
 
-  .overlay:hover:after {
-    opacity:1;
+  div.overlay-text {
+    background: rgba(0,0,0,0.6);
+    color: $header-color;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 150px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    transition: 1s;
+  }
+
+  div.overlay-text div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  div.overlay:hover div.overlay-text {
+    opacity: 1;
   }
 }
 
