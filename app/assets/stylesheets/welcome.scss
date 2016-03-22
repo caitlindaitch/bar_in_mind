@@ -12,8 +12,13 @@ $light-color: #fff;
 $accent-color: #43bf8f;
 $dark-color: #000;
 
+html {
+  background: $dark-color;
+}
+
 body {
   margin: 0;
+  background-color: $dark-color;
 }
 
 .container {
@@ -259,11 +264,25 @@ strong {
     color: $dark-color;
   }
 
+  input[type=text] {
+    width: 500px;
+  }
+
   input[type=submit] {
     color: $light-color;
   }
 
   input[type=submit]:hover {
     color: $dark-color;
+  }
+
+  textarea {
+    width: 500px;
+    height: 150px;
+    color: $dark-color;
+  }
+
+  .form-large {
+    height: 200px;
   }
 }
