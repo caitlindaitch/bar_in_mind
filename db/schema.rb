@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318184559) do
+ActiveRecord::Schema.define(version: 20160321230620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160318184559) do
     t.string  "price_meter"
     t.integer "neighborhood_id", null: false
     t.string  "image_url"
+    t.string  "description"
   end
 
   create_table "neighborhoods", force: :cascade do |t|

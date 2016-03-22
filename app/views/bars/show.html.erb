@@ -3,6 +3,11 @@
 </div>
 
 <%= image_tag @bar.image_url %>
+<p>Neighborhood: <%= @neighborhood.name %></p>
+<p>Category: <%= @bar.category %></p>
+<p>Music: <%= @bar.music %></p>
+<p>Price: <%= @bar.price_meter %></p>
+<p>Description: <%= @bar.description %></p>
 <%= button_to 'Delete Post', neighborhood_bar_url(@neighborhood, @bar),
                   method: :delete %></div>
 <p><strong>Note:</strong> With great power comes great responsibility. Please do not delete unless you have a good reason to to do.</p>
