@@ -313,6 +313,38 @@ strong {
   }
 }
 
+.new_user {
+  text-align: center;
+  font-family: $body-font;
+  color: $light-color;
+  line-height: 20px;
+
+  input[name="commit"] {
+    padding: 10px;
+    font-family: $subtitle-font;
+    text-transform: uppercase;
+    color: $light-color;
+    border: 2px solid $light-color;
+    background-color: $dark-color;
+    margin: 10px;
+    font-weight: 300;
+    display: inline-block;
+  }
+
+  input[name="commit"]:hover {
+    border: 2px solid $accent-color;
+    padding: 10px;
+    background-color: $accent-color;
+    color: $dark-color;
+    transition: 1s;
+    text-decoration: none;
+  }
+
+  .field {
+    margin: 10px;
+  }
+}
+
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)
