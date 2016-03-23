@@ -104,6 +104,31 @@ strong {
   }
 }
 
+.left-nav {
+  font-family: $subtitle-font;
+  font-size: 17px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: $light-color;
+  font-weight: 300;
+
+  a:link, a:active, a:visited {
+    color: $light-color;
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: .8;
+  }
+}
+
+.nav-item {
+  padding-left: 30px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
 .add-neighborhood {
   font-family: $subtitle-font;
   font-weight: 300;

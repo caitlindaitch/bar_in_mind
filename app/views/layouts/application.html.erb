@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Bar In Mind</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -11,9 +12,22 @@
 <body>
   <div class="container">
     <nav>
-      <div class="right-nav"><%= link_to "Home", neighborhoods_url %></div>
+      <div class="left-nav">
+        <% if current_user %>
+          <%= current_user.email %>
+        <% end %>
+        <p class="alert"><%= alert %></p>
+      </div>
+      <div class="right-nav">
+        <%= link_to "Home", neighborhoods_url %>
+        <% if !current_user %>
+          <div class="nav-item"><%= link_to "Sign Up", new_user_registration_path %></div>
+          <div class="nav-item"><%= link_to "Sign In", new_user_session_path %></div>
+        <% else %>
+          <div class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div>
+        <% end %>
+      </div>
     </nav>
-
     <%= yield %>
   </div>
 </body>
