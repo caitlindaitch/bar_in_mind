@@ -100,7 +100,8 @@ strong {
   }
 
   a:hover {
-    opacity: .8;
+    color: $accent-color;
+    transition: 1s;
   }
 }
 
@@ -119,7 +120,8 @@ strong {
   }
 
   a:hover {
-    opacity: .8;
+    color: $accent-color;
+    transition: 1s;
   }
 }
 
