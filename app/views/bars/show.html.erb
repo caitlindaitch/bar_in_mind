@@ -9,6 +9,7 @@
   <p><strong>Music:</strong> <%= @bar.music %></p>
   <p><strong>Price:</strong> <%= @bar.price_meter %></p>
   <p><strong>Description:</strong> <%= @bar.description %></p>
+  <p><strong>Created by:</strong> <%= @bar.user.email %> </p>
   <div class="bars-show-footer">
     <%= link_to 'Edit Bar', edit_neighborhood_bar_url(@neighborhood, @bar), class: "bars-button" %>
     <%= button_to 'Delete Bar', neighborhood_bar_url(@neighborhood, @bar),

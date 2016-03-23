@@ -10,7 +10,7 @@ class BarsController < ApplicationController
 
   def create
     @neighborhood = Neighborhood.find(params[:neighborhood_id])
-    @bar = @neighborhood.bars.create(bar_params)
+    @bar = @neighborhood.bars.create(bar_params.merge(user: current_user))
 
     redirect_to neighborhood_bar_url(@neighborhood, @bar)
   end
