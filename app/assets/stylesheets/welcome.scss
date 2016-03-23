@@ -345,6 +345,23 @@ strong {
   }
 }
 
+.form-links {
+  font-family: $subtitle-font;
+  font-size: 18px;
+  text-align: center;
+
+  a:link, a:active, a:visited {
+    color: $accent-color;
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+  a:hover {
+    opacity: .7;
+    transition: 1s;
+  }
+}
+
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)

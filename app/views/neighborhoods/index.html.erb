@@ -5,6 +5,8 @@
 
 <% if current_user %>
   <div class="add-neighborhood">Don't see the neighborhood you're looking for? <%= link_to "Add one", new_neighborhood_url %>.</div>
+<% else %>
+  <div class="add-neighborhood">Don't see the neighborhood you're looking for? <%= link_to "Log in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to add a neighborhood.</div>
 <% end %>
 
 <div class="bars-background">
