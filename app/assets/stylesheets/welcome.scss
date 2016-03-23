@@ -250,6 +250,7 @@ strong {
 .bar-show-image {
   float: left;
   padding-right: 20px;
+  max-width: 400px;
 }
 
 .bars-show-footer {
@@ -309,5 +310,24 @@ strong {
 
   .form-large {
     height: 200px;
+  }
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .bar-show-page {
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .bar-show-image {
+    float: none;
+    padding-bottom: 10px;
+    padding-right: 0;
+    width: 100%;
   }
 }

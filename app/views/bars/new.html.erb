@@ -17,6 +17,7 @@
       <p><%= f.text_field :image_url %></p>
       <p><%= f.label :description %></p>
       <p><%= f.text_area :description %></p>
+      <p><%= f.hidden_field(:user_id, value: current_user.id) %></p>
       <p><%= f.hidden_field(:neighborhood_id, value: @neighborhood.id) %></p>
       <p><%= f.submit "Submit", :class => "bars-button" %></p>
     <% end %>
