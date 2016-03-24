@@ -11,7 +11,7 @@
   <p><strong>Description:</strong> <%= @bar.description %></p>
   <% if !(@bar.user == nil) %>
     <p><strong>Created by:</strong> <%= @bar.user.email %> </p>
-    <% if @bar.user = current_user %>
+    <% if @bar.user == current_user %>
       <div class="bars-show-footer">
         <%= link_to 'Edit Bar', edit_neighborhood_bar_url(@neighborhood, @bar), class: "bars-button" %>
         <%= button_to 'Delete Bar', neighborhood_bar_url(@neighborhood, @bar),
