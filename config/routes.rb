@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'neighborhoods#index'
-
+  # Awesome job here with nested resources!
   resources :neighborhoods do
-    resources :bars    
+    resources :bars
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

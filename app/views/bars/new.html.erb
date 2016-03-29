@@ -2,6 +2,9 @@
   <h1>New Bar</h1>
 </div>
 
+<!--Instead of having two different forms for both edit and new, I would add a partial: _form.html.erb,
+use the form below, then render it like <% =render "form" %> here and in edit.html.erb  -->
+
 <div class="bar-show-page">
   <div class="form">
     <%= form_for [@neighborhood, @bar] do |f| %>
