@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Nice job here with your seed data!
+
 Neighborhood.destroy_all
 Bar.destroy_all
 

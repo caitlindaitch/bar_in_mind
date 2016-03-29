@@ -18,6 +18,8 @@ class NeighborhoodsController < ApplicationController
     @bars = @neighborhood.bars
   end
 
+# Totally fine and makes sense why you wouldn't be adding the functionality here to delete a neighborhood,
+# I would just delete these empty methods for now
   def edit
 
   end

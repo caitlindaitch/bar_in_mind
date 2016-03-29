@@ -2,6 +2,7 @@
   <h1><%= @neighborhood.name %></h1>
 </div>
 
+<!--Nice! Job here: -->
 <% if current_user %>
   <div class="add-neighborhood">Don't see the bar you're looking for? <%= link_to "Add one", new_neighborhood_bar_url(@neighborhood) %>.</div>
 <% else %>

@@ -1,3 +1,4 @@
+# AWESOME JOB WITH USING RSPEC :)
 require "rails_helper"
 
 RSpec.describe Neighborhood, :type => :model do
