@@ -41,6 +41,14 @@ class BarsController < ApplicationController
     redirect_to @neighborhood
   end
 
+  def add_favorite
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @bar = @neighborhood.bars.find(params[:id])
+    @bar.favorites.create(user: current_user)
+
+    redirect_to neighborhood_bar_url(@neighborhood, @bar)
+  end
+
   private
 
   def bar_params
