@@ -1,3 +1,20 @@
-<% @favorites.each do |fav| %>
-  <%= fav.name %>
-<% end %>
+<div class="show-bar-header">
+  <h1>Favorites</h1>
+</div>
+
+<div class="bars-background">
+  <% @favorites.each do |fav| %>
+    <div class="neighborhoods-outer col-md-3">
+      <div class="neighborhoods-inner">
+        <div class="overlay">
+          <%= image_tag(fav.image_url, :alt => fav.name) %>
+          <div class="overlay-text">
+            <div>
+              <%= fav.name %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

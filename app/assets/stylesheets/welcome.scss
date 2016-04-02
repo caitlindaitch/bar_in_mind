@@ -185,6 +185,8 @@ strong {
   div.overlay-text {
     background: rgba(0,0,0,0.6);
     color: $light-color;
+    font-family: $subtitle-font;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;

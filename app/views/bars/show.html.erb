@@ -9,7 +9,6 @@
   <p><strong>Music:</strong> <%= @bar.music %></p>
   <p><strong>Price:</strong> <%= @bar.price_meter %></p>
   <p><strong>Description:</strong> <%= @bar.description %></p>
-  <%=link_to'Favorite this bar'.html_safe, add_favorite_neighborhood_bar_path(@neighborhood, @bar), class: "heart", :method => :post %>
   <% if !(@bar.user == nil) %>
     <p><strong>Created by:</strong> <%= @bar.user.email %> </p>
     <% if @bar.user == current_user %>
@@ -20,5 +19,10 @@
         <p><strong>Note:</strong> With great power comes great responsibility. Please do not delete unless you have a good reason to to do.</p>
       </div>
     <% end %>
+  <% end %>
+  <% if current_user %>
+    <div class="bars-show-footer">
+      <%=link_to'Favorite this bar'.html_safe, add_favorite_neighborhood_bar_path(@neighborhood, @bar), class: "bars-button", :method => :post %>
+    </div>
   <% end %>
 </div>
